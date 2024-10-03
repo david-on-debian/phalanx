@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 
-import sys # the most important and confusing module out there
+""" This python3 module (technically it`s a file...) provides a class (IOport,) for
+simulating I/O ports such as RJ-45 ports, USB, PS/2, etc.
 
-# thank goodness this works.
+--author: David Geoke
+"""
 
-__author__ = 'David J Goeke <secret321king@gmail.com>'
+# thank goodness this (the whole module) works.
+
+__author__ = 'David J Goeke <secret321king3@gmail.com>'
 __credits__ = ('None yet')
 __all__ = ['IOport']
+
+import sys # the most important and confusing module out there
 
 class IOport:
     """ a class for emulating I/O ports such as(but not limited to,): USB ports, HDMI ports, Serial ports, PS/2 ports, RJ45 Ethernet ports, etc.
