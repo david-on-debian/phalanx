@@ -3,6 +3,19 @@
 """ This python3 module (technically it`s a file...) provides a class (IOport,) for
 simulating I/O ports such as RJ-45 ports, USB, PS/2, etc.
 
+The way to use this module is as follows:
+import phalanx
+eth0 = IOport()
+eth1 = IOport()
+eth0.load("hello there")
+eth0.write(eth1)
+eth1.read()
+value = eth1.read_return()
+print(value)
+
+In the very soon future, I will explain all of
+that line by line. but not just yet.
+
 --author: David Geoke
 """
 
@@ -77,6 +90,13 @@ class IOport:
         """honestly pretty self-explanatory. reads the (if any) value from self.data_in, then places it in self.current_data.
         """
         self.current_data = self.data_in
+
+    @staticmethod
+    def read_return(self):
+        """ Again, pretty self-explanatory;
+        returns self.current_data ( set by self.read() )
+        """
+        return self.current_data
     
     @staticmethod
     def execute(self, error_file):
