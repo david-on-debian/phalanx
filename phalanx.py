@@ -67,14 +67,12 @@ class IOport:
         """
         self.__current_data = data
     
-    @staticmethod
     def load(self, data):
         """sets self.data_out to ``data`` so you can use ``[IOport-name].write([IOport-name], [second-IOport-name]).
         see the documentation for ``write`` for more information.
         """
         self.data_out = data
     
-    @staticmethod
     def write(self, target, data=None):
         """writes ``data`` to target.data_in;
         unless ``data`` is None, then `write` takes the data from self.data_out.
@@ -85,20 +83,17 @@ class IOport:
             pass
         target.data_in = data 
         
-    @staticmethod
     def read(self):
         """honestly pretty self-explanatory. reads the (if any) value from self.data_in, then places it in self.current_data.
         """
         self.current_data = self.data_in
 
-    @staticmethod
     def read_return(self):
         """ Again, pretty self-explanatory;
         returns self.current_data ( set by self.read() )
         """
         return self.current_data
-    
-    @staticmethod
+   
     def execute(self, error_file):
         """ executes the data in self.current_data. 
         """
